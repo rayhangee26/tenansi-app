@@ -6,10 +6,10 @@ public interface TenantService {
 
     Iterable<Tenant> listAllTenant();
 
-    Tenant getTenantById(Integer id);
+    Tenant getTenantById(Integer tenantId);
 
     Tenant saveTenant(Tenant tenant);
 
-    void deleteTenant(Integer id);
+    void deleteTenant(Integer tenantId);
 	
 }

@@ -23,8 +23,8 @@ public class TenantServiceImpl implements TenantService {
     }
 
     @Override
-    public Tenant getTenantById(Integer id) {
-        return tenantRepository.findOne(id);
+    public Tenant getTenantById(Integer tenantId) {
+        return tenantRepository.findOne(tenantId);
     }
 
     @Override
@@ -33,7 +33,7 @@ public class TenantServiceImpl implements TenantService {
     }
 
     @Override
-    public void deleteTenant(Integer id) {
-    	tenantRepository.delete(id);
+    public void deleteTenant(Integer tenantId) {
+    	tenantRepository.delete(tenantId);
     }
 }
