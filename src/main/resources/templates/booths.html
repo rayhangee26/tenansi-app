@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title>Spring Boot Exemple</title>
+
+    <!--/*/ <th:block th:include="fragments/headerinc :: head"></th:block> /*/-->
+</head>
+<body>
+<div class="container">
+    <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
+    <div th:if="${not #lists.isEmpty(booths)}">
+        <h2>Booth Type</h2>
+        <table class="table table-striped">
+            <tr>
+                <th>No</th>
+                <th>Booth Id</th>
+                <th>Ukuran</th>
+                <th>Harga</th>
+                <th>Area</th>
+                <th>View</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <tr th:each="booth : ${booths}">
+                <td th:text="1">No</td>
+                 <td th:text="${booth.boothId}"><a href="/booth/${booth.boothId}">Booth Id</a></td>
+                <td th:text="${booth.ukuran}">Ukuran</td>
+                <td th:text="${booth.harga}">Harga</td>
+                <td th:text="${booth.area}">Area</td>
+                <td><a th:href="${'/booth/' + booth.boothId}">View</a></td>
+                <td><a th:href="${'/booth/edit/' + booth.boothId}">Edit</a></td>
+                <td><a th:href="${'/booth/delete/' + booth.boothId}">Delete</a></td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+
+</body>
+</html>
