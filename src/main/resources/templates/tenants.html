@@ -11,6 +11,7 @@
     <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
     <div th:if="${not #lists.isEmpty(tenants)}">
         <h2>Registered Tenants</h2>
+        <a th:href="@{/tenant/new}">Tambah Tenant</a>
         <table class="table table-striped">
             <tr>
                 <th>No</th>

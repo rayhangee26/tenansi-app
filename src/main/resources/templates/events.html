@@ -9,30 +9,29 @@
 <body>
 <div class="container">
     <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
-    <div th:if="${not #lists.isEmpty(tenants)}">
-        <h2>List Tenant</h2>
+    <div th:if="${not #lists.isEmpty(events)}">
+        <h2>List Event</h2>
+        <a th:href="@{/event/new}">Tambah Event baru</a>
         <table class="table table-striped">
             <tr>
                 <th>No</th>
-                <th>Tenants Id</th>
-                <th>Nama</th>
-                <th>Owner</th>
-                <th>alamatr</th>
-                <th>No Identitas</th>
+                <th>Event ID</th>
+                <th>Nama Event</th>
+                <th>Lokasi</th>
+                <th>Waktu</th>
                 <th>View</th>
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
-            <tr th:each="tenant : ${tenants}">
+            <tr th:each="event : ${events}">
                 <td th:text="1">No</td>
-                 <td th:text="${tenant.tenantId}"><a href="/tenant/${tenant.tenantId}">Id</a></td>
-                <td th:text="${tenant.nama}">Nama</td>
-                <td th:text="${tenant.owner}">Owner</td>
-                <td th:text="${tenant.alamat}">Alamat</td>
-                <td th:text="${tenant.noIdentitas}">No Identitas</td>
-                <td><a th:href="${'/tenant/' + tenant.tenantId}">View</a></td>
-                <td><a th:href="${'/tenant/edit/' + tenant.tenantId}">Edit</a></td>
-                <td><a th:href="${'/tenant/delete/' + tenant.tenantId}">Delete</a></td>
+                 <td th:text="${event.eventId}"><a href="/event/${event.eventId}">Id</a></td>
+                <td th:text="${event.namaEvent}">Nama Event</td>
+                <td th:text="${event.lokasi}">Lokasi</td>
+                <td th:text="${event.waktu}">Waktu</td>
+                <td><a th:href="${'/event/' + event.eventId}">View</a></td>
+                <td><a th:href="${'/event/edit/' + event.eventId}">Edit</a></td>
+                <td><a th:href="${'/event/delete/' + event.eventId}">Delete</a></td>
             </tr>
         </table>
 

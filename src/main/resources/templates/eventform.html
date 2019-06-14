@@ -10,32 +10,26 @@
 <div class="container">
     <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
 
-    <h2>Product Details</h2>
+    <h2>Tambah Event</h2>
     <div>
-        <form class="form-horizontal" th:object="${tenant}" th:action="@{/tenant}" method="post">
-            <input type="hidden" th:field="*{tenantId}"/>
+        <form class="form-horizontal" th:object="${event}" th:action="@{/event}" method="post">
+            <input type="hidden" th:field="*{eventId}"/>
             <div class="form-group">
-                <label class="col-sm-2 control-label">Nama:</label>
+                <label class="col-sm-2 control-label">Nama Event:</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" th:field="*{nama}"/>
+                    <input type="text" class="form-control" th:field="*{namaEvent}"/>
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-sm-2 control-label">Owner</label>
+                <label class="col-sm-2 control-label">Lokasi</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" th:field="*{owner}"/>
+                    <input type="text" class="form-control" th:field="*{lokasi}"/>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-sm-2 control-label">Alamat</label>
                 <div class="col-sm-10">
-                    <input type="text" class="form-control" th:field="*{alamat}"/>
-                </div>
-            </div>
-                        <div class="form-group">
-                <label class="col-sm-2 control-label">No Identitas</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" th:field="*{noIdentitas}"/>
+                    <input type="date" class="form-control" th:field="*{waktu}"/>
                 </div>
             </div>
             <div class="row">

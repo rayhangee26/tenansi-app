@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 public class Event {
 
@@ -18,7 +20,9 @@ public class Event {
 
 	private String namaEvent;
 	private String lokasi;
+	
 	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern ="yyyy-MM-dd")
 	private Date waktu;
 
 	public Integer getEventId() {

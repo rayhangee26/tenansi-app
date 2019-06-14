@@ -11,6 +11,7 @@
     <!--/*/ <th:block th:include="fragments/header :: header"></th:block> /*/-->
     <div th:if="${not #lists.isEmpty(booths)}">
         <h2>Booth Type</h2>
+        <a th:href="@{/booth/new}">Tambah Jenis Booth</a>
         <table class="table table-striped">
             <tr>
                 <th>No</th>
